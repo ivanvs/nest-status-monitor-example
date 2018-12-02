@@ -1,7 +1,4 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "package.json", "use": "@now/static-build" },
-    { "src": "dist/main.js", "use": "@now/node-server" }
-  ]
+  "builds": [{ "src": "dist/main.js", "use": "@now/node-server" }]
 }
