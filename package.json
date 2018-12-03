@@ -7,11 +7,11 @@
   "scripts": {
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
-    "start": "ts-node -r tsconfig-paths/register src/main.ts",
+    "start:local-dev": "ts-node -r tsconfig-paths/register src/main.ts",
     "start:dev": "nodemon",
     "start:debug": "nodemon --config nodemon-debug.json",
     "prestart:prod": "rimraf dist && tsc",
-    "start:prod": "node dist/main.js",
+    "start": "node dist/main.js",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -22,7 +22,6 @@
   "dependencies": {
     "@nestjs/common": "^5.4.0",
     "@nestjs/core": "^5.4.0",
-    "@now/node-server": "^0.4.24",
     "nest-status-monitor": "0.0.2",
     "reflect-metadata": "^0.1.12",
     "rimraf": "^2.6.2",
@@ -30,6 +29,7 @@
     "typescript": "^3.0.1"
   },
   "devDependencies": {
+    "@now/node-server": "^0.4.24",
     "@nestjs/testing": "^5.1.0",
     "@types/express": "^4.16.0",
     "@types/jest": "^23.3.1",
