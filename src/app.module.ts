@@ -4,10 +4,11 @@ import { HealthController } from "./health.controller";
 import { AppService } from "./app.service";
 import { StatusMonitorModule } from "nest-status-monitor";
 
+const portNumber = parseInt(process.env.PORT) || 3000;
 const statusMonitorConfig = {
   pageTitle: "Nest.js Status Monitor", // Default title
   path: "/status",
-  port: 3000,
+  port: portNumber,
   spans: [
     {
       interval: 1, // Every second
@@ -27,13 +28,13 @@ const statusMonitorConfig = {
       protocol: "http",
       host: "localhost",
       path: "/health/alive",
-      port: 3000
+      port: portNumber
     },
     {
       protocol: "http",
       host: "localhost",
       path: "/health/dead",
-      port: 3000
+      port: portNumber
     }
   ],
   chartVisibility: {
