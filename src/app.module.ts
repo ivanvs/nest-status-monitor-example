@@ -8,7 +8,7 @@ const portNumber = parseInt(process.env.PORT) || 3000;
 const statusMonitorConfig = {
   pageTitle: "Nest.js Status Monitor", // Default title
   path: "/status",
-  port: portNumber,
+  port: 80,
   spans: [
     {
       interval: 1, // Every second
